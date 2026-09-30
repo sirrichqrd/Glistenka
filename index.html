@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glisten Karate Club — School Self-Defence &amp; Personal Safety Seminar | Proposal</title>
+<link rel="icon" type="image/svg" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
+<link rel="shortcut icon" type="image/svg" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=Tinos:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/* ================= TOKENS ================= */
+:root{
+  --bg:#FAF9F6; --sand:#F4F0E6; --line:#E8E2D4; --line-2:#DDD6C5;
+  --ink:#181510; --ink-2:#4C473D; --muted:#8B8577;
+  --red:#C8102E; --red-deep:#A30D26; --red-lite:#E8455F; --gold:#C9A227;
+  --navy:#20395B; /* PDF cover frame & title — matches the sample title page */
+  --font-display:'Sora',sans-serif; --font-body:'Inter',sans-serif; --font-serif:'Tinos','Times New Roman',serif;
+  --belt:linear-gradient(90deg,#FFFFFF 0%,#F6C445 14%,#E87A2E 28%,#3F8E5B 42%,#2E5FA3 56%,#7A5230 70%,#17140F 84%,#C8102E 100%);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+img,svg{display:block} a{color:inherit;text-decoration:none} button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
+.container{width:min(1140px,92%);margin-inline:auto}
+section[id]{scroll-margin-top:92px}
+.ic{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.belt{height:5px;border-radius:99px;background:var(--belt)}
+
+/* ================= BUTTONS ================= */
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 24px;border-radius:999px;font-weight:600;font-size:15px;border:1.5px solid transparent;transition:.25s}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-deep);transform:translateY(-2px);box-shadow:0 12px 26px rgba(200,16,46,.28)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(24,21,16,.25)}
+.btn-ghost{border-color:var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:#fff}
+
+/* ================= NAV ================= */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(250,249,246,.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:.3s}
+.nav.scrolled{border-color:var(--line);box-shadow:0 6px 24px rgba(24,21,16,.05)}
+.nav-in{width:min(1240px,94%);margin:auto;display:flex;align-items:center;gap:24px;padding:13px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-text{display:flex;flex-direction:column;line-height:1.3}
+.brand-text strong{font:700 13.5px var(--font-display);letter-spacing:.05em}
+.brand-text em{font:500 10.5px var(--font-body);font-style:normal;color:var(--muted);letter-spacing:.08em}
+.nav-links{display:flex;gap:2px;margin-left:auto}
+.nav-links a{padding:8px 13px;border-radius:99px;font-size:13.5px;font-weight:500;color:var(--ink-2);transition:.2s;white-space:nowrap}
+.nav-links a:hover{background:var(--sand);color:var(--ink)}
+.nav-links a.active{background:var(--ink);color:#fff}
+.nav .btn{padding:10px 18px;font-size:13.5px}
+
+
+/* mobile nav toggle + sidebar */
+.nav-toggle{display:none;width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:#fff;place-items:center}
+.nav-toggle .ic{width:22px;height:22px}
+.mobile-sidebar{position:fixed;inset:0;z-index:80;display:none}
+.mobile-sidebar.open{display:block}
+.ms-backdrop{position:absolute;inset:0;background:rgba(24,21,16,.48);backdrop-filter:blur(4px)}
+.ms-panel{position:absolute;top:0;right:0;bottom:0;width:min(84vw,340px);background:#FAF9F6;border-left:1px solid var(--line);padding:20px 18px 28px;display:flex;flex-direction:column;gap:18px;overflow:auto;box-shadow:-24px 0 60px rgba(24,21,16,.18)}
+.ms-head{display:flex;align-items:center;justify-content:space-between}
+.ms-close{width:40px;height:40px;border-radius:12px;border:1px solid var(--line);background:#fff;display:grid;place-items:center}
+.ms-links{display:flex;flex-direction:column;gap:6px}
+.ms-links a{padding:14px 14px;border-radius:14px;font-weight:600;font-size:15px;background:#fff;border:1px solid var(--line);color:var(--ink-2)}
+.ms-links a.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.ms-cta{margin-top:auto;display:flex;flex-direction:column;gap:10px}
+@media(max-width:860px){
+  .nav-toggle{display:grid}
+  .nav-links{display:none!important}
+  .nav .btn{padding:10px 14px}
+}
+
+/* ================= HERO ================= */
+.hero{padding:158px 0 100px;position:relative;overflow:hidden;
+  background:radial-gradient(700px 420px at 88% -10%,rgba(200,16,46,.07),transparent 60%),
+             radial-gradient(620px 420px at -10% 35%,rgba(201,162,39,.09),transparent 60%),var(--bg)}
+.hero::before{content:"";position:absolute;inset:0;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:56px 56px;opacity:.35;
+  -webkit-mask-image:radial-gradient(720px 520px at 72% 18%,#000,transparent);mask-image:radial-gradient(720px 520px at 72% 18%,#000,transparent)}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.pill-eyebrow{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);padding:8px 16px;border-radius:99px;font:600 11.5px var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+.pill-eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--red)}
+.hero h1{font:800 clamp(38px,4.6vw,60px)/1.06 var(--font-display);letter-spacing:-.02em;margin:22px 0 20px}
+.hero h1 .accent{color:var(--red)}
+.hero-sub{font-size:16.5px;color:var(--ink-2);max-width:54ch}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 30px}
+.meta-chip{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:9px 14px;font-size:13px;color:var(--ink-2)}
+.meta-chip b{color:var(--muted);font-weight:600;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+.hero-stats{display:flex;flex-wrap:wrap;gap:36px;margin-top:42px;padding-top:28px;border-top:1px solid var(--line)}
+.hero-stats div{display:flex;flex-direction:column}
+.hero-stats b{font:800 30px var(--font-display)}
+.hero-stats span{font-size:12px;color:var(--muted);letter-spacing:.05em}
+
+/* hero visual */
+.hero-visual{position:relative;min-height:560px;isolation:isolate}
+.enso-bg{position:absolute;width:min(560px,120%);height:auto;aspect-ratio:1;right:-110px;top:-70px;color:var(--red);opacity:.09;pointer-events:none}
+img.enso-bg{filter:grayscale(1) opacity(.5);mix-blend:multiply}
+.kanji-bg{position:absolute;font-family:var(--font-serif);font-weight:700;font-size:200px;line-height:1;color:var(--ink);opacity:.05;right:26px;bottom:-24px;letter-spacing:-.06em;user-select:none}
+.mock-stack{position:absolute;right:36px;top:84px;width:310px;max-width:100%}
+.mock-back{position:absolute;inset:0;transform:rotate(5deg);background:var(--sand);border:1px solid var(--line);border-radius:16px}
+.mock-front{position:relative;transform:rotate(-3deg);background:#fff;border:1px solid #E3DCCB;border-radius:16px;padding:26px 24px 34px;box-shadow:0 30px 60px rgba(24,21,16,.13)}
+.mock-logos{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.mock-badge{font:700 7.5px var(--font-display);letter-spacing:.06em;border:1px solid var(--line);border-radius:6px;padding:3px 6px;color:var(--muted)}
+.mock-rule{border:0;border-top:1px solid var(--line);margin:18px 0 20px}
+.mock-front h3{font-family:var(--font-serif);font-weight:700;font-size:31px;letter-spacing:.16em;color:var(--ink)}
+.rline{width:44px;height:3px;background:var(--red);margin:13px 0 0}
+.mock-sub{font:600 10.5px var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-top:12px;line-height:1.6}
+.mock-line{font-size:11.5px;color:var(--muted);margin-top:14px}
+.mock-seal{position:absolute;right:16px;bottom:16px;width:62px;height:62px;border-radius:50%;background:var(--red);display:grid;place-items:center;box-shadow:0 8px 20px rgba(200,16,46,.35);transform:rotate(8deg)}
+.vchip{position:absolute;display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:11px 17px;font-size:12.5px;font-weight:600;box-shadow:0 14px 34px rgba(24,21,16,.1);animation:bob 6s ease-in-out infinite}
+.vchip .ic{width:16px;height:16px;color:var(--red)}
+.vchip-1{left:-8px;top:112px}
+.vchip-2{left:0;bottom:150px;animation-delay:1.6s}
+.vchip-3{right:8px;bottom:36px;animation-delay:3.2s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* ================= MARQUEE ================= */
+.marquee{background:var(--ink);color:#F1EDE3;overflow:hidden;padding:15px 0}
+.marquee-track{display:flex;width:max-content;animation:scroll 32s linear infinite}
+.marquee-group{display:flex;align-items:center;gap:26px;padding-right:26px;font:700 12.5px var(--font-display);letter-spacing:.28em;white-space:nowrap}
+.mdot{width:6px;height:6px;background:var(--red);border-radius:50%;flex:none}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ================= LOGO BAR ================= */
+.logos{background:#fff;border-bottom:1px solid var(--line);padding:46px 0}
+.logos-label{text-align:center;font:700 10.5px var(--font-display);letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:30px}
+.logos-row{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
+.logo-main{display:flex;align-items:center;gap:14px;padding-right:24px}
+.logo-main strong{display:block;font:800 15px var(--font-display)}
+.logo-main span{font-size:11px;color:var(--muted)}
+.logos-div{width:1px;height:54px;background:var(--line)}
+.aff{display:flex;flex-direction:column;align-items:center;gap:8px;width:118px;text-align:center}
+.aff span{font-size:10px;color:var(--muted);line-height:1.35;font-weight:500}
+
+/* ================= SECTIONS ================= */
+.sec{padding:104px 0}
+.sec.alt{background:var(--sand)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:700 11.5px var(--font-display);letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--red)}
+.eyebrow.light{color:var(--red-lite)} .eyebrow.light::before{background:var(--red-lite)}
+h2{font:700 clamp(29px,3.8vw,43px)/1.13 var(--font-display);letter-spacing:-.015em;margin:14px 0 18px;max-width:24ch}
+.sec-sub{color:var(--ink-2);font-size:16px;max-width:64ch}
+.sec-head{margin-bottom:46px}
+.center{text-align:center;margin-inline:auto}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;transition:.3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(24,21,16,.08);border-color:var(--line-2)}
+
+/* overview */
+.split{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:start}
+.lead{font:600 clamp(19px,2.3vw,23px)/1.5 var(--font-display);margin-bottom:16px}
+.body{color:var(--ink-2);margin-bottom:14px;font-size:15.5px}
+.glance{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px;position:sticky;top:110px}
+.glance h3{font:700 12px var(--font-display);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.glance dl div{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line);font-size:13px}
+.glance dl div:last-of-type{border-bottom:0}
+.glance dt{font-weight:700;font-size:11px;letter-spacing:.05em;text-transform:uppercase;padding-top:2px}
+.glance dd{color:var(--ink-2)}
+.glance .belt{margin-top:20px}
+
+/* why */
+.check-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.check{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px 17px;font-size:14px;font-weight:500;color:var(--ink-2)}
+.check .ic{color:var(--red);margin-top:3px}
+.callout{margin-top:36px;background:var(--ink);color:#EDE9DF;border-radius:18px;padding:28px 32px;font-size:16px;position:relative;overflow:hidden;max-width:820px}
+.callout::after{content:"押忍";position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:62px;opacity:.09;font-family:var(--font-serif)}
+.callout strong{color:#fff}
+
+/* who / cards */
+.quad-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.quad-grid h3{font:700 16.5px var(--font-display);margin:16px 0 8px}
+.quad-grid p{font-size:14px;color:var(--ink-2)}
+.a-ic{width:46px;height:46px;border-radius:13px;background:var(--sand);display:grid;place-items:center;color:var(--red)}
+.a-ic .ic{width:21px;height:21px}
+
+/* learning */
+.learn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.learn-card{display:flex;flex-direction:column}
+.learn-card.wide{grid-column:1/-1}
+.l-top{display:flex;justify-content:space-between;align-items:flex-start}
+.l-ic{width:44px;height:44px;border-radius:12px;background:#FBEEF0;display:grid;place-items:center;color:var(--red)}
+.l-no{font:800 24px var(--font-display);color:#E5DECD;line-height:1}
+.learn-card h3{font:700 16.5px var(--font-display);margin:16px 0 8px}
+.learn-card p{font-size:14px;color:var(--ink-2)}
+
+/* experience */
+.display-band{background:var(--ink);color:#F7F4EC;border-radius:24px;padding:46px 36px;display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:center;font:800 clamp(28px,4.6vw,52px)/1.06 var(--font-display);margin-bottom:42px;position:relative;overflow:hidden}
+.display-band span{color:var(--red-lite)}
+.display-band::after{content:"";position:absolute;width:340px;height:340px;border:26px solid rgba(255,255,255,.04);border-radius:50%;right:-90px;top:-140px}
+.method-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));gap:18px}
+.method-grid h3{font:700 15px var(--font-display);margin:14px 0 7px}
+.method-grid p{font-size:13px;color:var(--ink-2)}
+.exp-note{margin-top:28px;font-size:14.5px;color:var(--ink-2);max-width:70ch}
+
+/* benefits */
+.mini-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:18px}
+.mini-grid h3{font:700 15.5px var(--font-display);margin:14px 0 7px}
+.mini-grid p{font-size:13px;color:var(--ink-2)}
+
+/* team */
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.t-card{position:relative;overflow:hidden}
+.t-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--red)}
+.t-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:18px}
+.avatar{width:64px;height:64px;border-radius:50%;background:var(--ink);color:#fff;font:800 20px var(--font-display);display:grid;place-items:center;flex:none}
+.t-aff{display:inline-flex;align-items:center;gap:7px;background:var(--sand);border:1px solid var(--line);padding:5px 11px;border-radius:99px;font-size:11px;font-weight:600;color:var(--ink-2)}
+.t-aff img{height:20px;width:auto;object-fit:contain}
+.t-aff-orig{display:inline-flex;align-items:center;gap:7px;background:var(--sand);border:1px solid var(--line);padding:5px 11px;border-radius:99px;font-size:11px;font-weight:600;color:var(--ink-2)}
+.t-aff svg{width:16px;height:16px;flex:none}
+.t-card h3{font:700 18px var(--font-display)}
+.t-role{color:var(--red);font-weight:600;font-size:13px;margin:5px 0 12px;letter-spacing:.02em}
+.t-bio{font-size:14px;color:var(--ink-2)}
+
+/* logistics */
+.spec{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.spec .row{display:grid;grid-template-columns:200px 1fr;border-bottom:1px dashed var(--line)}
+.spec .row:last-child{border-bottom:0}
+.spec dt{padding:16px 22px;font:700 11px var(--font-display);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border-right:1px dashed var(--line)}
+.spec dd{padding:16px 22px;font-size:14.5px;color:var(--ink)}
+.note{display:flex;gap:14px;margin-top:24px;background:#FCF0EE;border:1px solid #F0D6D1;border-radius:16px;padding:20px 22px;font-size:14px;color:var(--ink-2)}
+.note .ic{color:var(--red);margin-top:3px;width:20px;height:20px}
+.note b{color:var(--ink)}
+.note small{display:block;margin-top:4px;color:var(--muted);font-size:12.5px}
+
+/* flow */
+.flow{max-width:640px;margin:0 auto;position:relative}
+.flow::before{content:"";position:absolute;left:19px;top:10px;bottom:10px;width:2px;background:linear-gradient(var(--red),var(--line))}
+.flow-item{position:relative;padding:0 0 32px 66px}
+.flow-item:last-child{padding-bottom:0}
+.f-dot{position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;background:#fff;border:2px solid var(--red);color:var(--red);font:800 15px var(--font-display);display:grid;place-items:center}
+.flow-item:last-child .f-dot{background:var(--red);color:#fff}
+.f-phase{font:700 10.5px var(--font-display);letter-spacing:.2em;color:var(--red);text-transform:uppercase}
+.flow-item h3{font:700 18.5px var(--font-display);margin-top:4px}
+.flow-item p{font-size:14px;color:var(--ink-2);margin-top:4px}
+
+/* investment */
+.invest-card{max-width:800px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:24px;padding:48px 44px;text-align:center;position:relative;overflow:hidden}
+.invest-card .belt{position:absolute;top:0;left:0;right:0;border-radius:0}
+.fee-val{font:700 clamp(32px,5vw,46px)/1 var(--font-body);letter-spacing:.05em;margin-top:6px}
+.fee-val.is-set{color:var(--red)}
+.fee-tag{display:inline-block;margin-top:12px;background:var(--sand);border:1px dashed #D8D0BC;padding:6px 15px;border-radius:99px;font-size:12px;font-weight:600;color:var(--ink-2)}
+.invest-div{border:0;border-top:1px solid var(--line);margin:34px 0 26px}
+.invest-card h3{font:700 12.5px var(--font-display);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.includes{display:grid;grid-template-columns:1fr 1fr;gap:11px 26px;text-align:left}
+.includes div{display:flex;gap:10px;align-items:center;font-size:14px;color:var(--ink-2)}
+.includes .ic{color:var(--red);width:16px;height:16px}
+.invest-foot{margin-top:26px;font-size:12.5px;color:var(--muted)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:18px}
+.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px 20px}
+.step b{font:800 26px var(--font-display);color:var(--red)}
+.step h3{font:700 15px var(--font-display);margin:10px 0 6px}
+.step p{font-size:12.5px;color:var(--ink-2)}
+
+/* about */
+.about-chips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 24px}
+.about-chips span{background:#fff;border:1px solid var(--line);border-radius:99px;padding:8px 15px;font-size:12.5px;font-weight:600;color:var(--ink-2)}
+
+/* closing */
+.closing{background:var(--ink);color:#EFEBE1;padding:120px 0;position:relative;overflow:hidden}
+.closing .kanji-bg{color:#fff;opacity:.05;right:auto;left:-30px;bottom:-40px;font-size:230px}
+.closing .container{position:relative;z-index:1}
+.closing-title{font:800 clamp(33px,5.2vw,58px)/1.1 var(--font-display);color:#fff;max-width:17ch;margin:18px 0 24px}
+.closing-title .accent{color:var(--red-lite)}
+.closing-copy p{max-width:60ch;color:#BEB8A9;font-size:16px;margin-bottom:14px}
+.contact-card{margin-top:44px;background:#211E17;border:1px solid #373127;border-radius:24px;padding:36px;max-width:680px}
+.contact-card h3{font:700 18px var(--font-display);color:#fff;margin-bottom:14px}
+.contact-people p{font-size:13.5px;color:#BEB8A9;margin-bottom:6px}
+.contact-people b{color:#F1EDE3}
+.contact-rows{display:flex;flex-wrap:wrap;gap:12px 28px;margin:22px 0 26px;padding-top:20px;border-top:1px dashed #373127}
+.contact-rows span{display:inline-flex;align-items:center;gap:9px;font-size:13.5px;color:#BEB8A9}
+.contact-rows .ic{color:var(--red-lite);width:16px;height:16px}
+.contact-rows b{color:#F1EDE3;font-weight:600}
+
+/* footer */
+.footer{background:#141210;color:#B9B3A5;padding:62px 0 42px;position:relative}
+.footer .belt{position:absolute;top:0;left:0;right:0;border-radius:0}
+.footer-in{display:flex;justify-content:space-between;gap:44px;flex-wrap:wrap}
+.f-brand{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.f-brand strong{display:block;font:800 14px var(--font-display);color:#F1EDE3;letter-spacing:.05em}
+.f-brand span{font-size:11.5px}
+.f-affs{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.f-affs img{height:34px;width:auto;object-fit:contain}
+.f-brand img{width:40px;height:auto}
+/* If you only have dark-ink logos and need them light on the dark footer: */
+/* .f-affs img{filter:brightness(0) invert(.92)} */
+.f-right{font-size:12.5px;line-height:2}
+.f-meta b{color:#F1EDE3;font-weight:600}
+.f-hint{color:#7E7869;font-size:11.5px}
+
+/* floating + overlay */
+.float-export{position:fixed;right:18px;bottom:18px;z-index:60;display:none;align-items:center;gap:9px;background:var(--red);color:#fff;padding:14px 20px;border-radius:999px;font-weight:600;font-size:13.5px;box-shadow:0 12px 30px rgba(200,16,46,.45)}
+.print-overlay{position:fixed;inset:0;z-index:100;background:rgba(24,21,16,.92);display:none;place-items:center;padding:20px}
+.print-overlay.show{display:grid}
+.po-card{background:#fff;border-radius:20px;padding:38px 44px;text-align:center;max-width:430px}
+.spinner{width:44px;height:44px;border:4px solid var(--sand);border-top-color:var(--red);border-radius:50%;margin:0 auto 18px;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.po-card h3{font:700 18px var(--font-display);margin-bottom:8px}
+.po-card p{font-size:13.5px;color:var(--ink-2)}
+
+/* reveal */
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;transition-delay:var(--d,0s)}
+.js .reveal.in{opacity:1;transform:none}
+
+/* ================= VECTOR CLIP ARTS ================= */
+.clipart{margin:42px auto 0;display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center;color:var(--ink-2)}
+.clipart svg{width:120px;height:auto}
+.clipart figcaption{font:600 11px var(--font-body);letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.clipart figcaption i{font-style:normal;color:var(--red);padding:0 7px}
+
+/* ================= MOBILE SLIDERS ================= */
+.slider{position:relative}
+.slider-nav{display:none;gap:7px;justify-content:center;margin-top:16px}
+.slider-nav button{width:8px;height:8px;border-radius:99px;background:var(--line-2);transition:.25s}
+.slider-nav button.on{background:var(--red);width:22px}
+
+/* ================= RESPONSIVE ================= */
+
+/* — tighten the topbar before switching to hamburger — */
+@media(max-width:1200px){
+  .nav-in{gap:14px}
+  .nav-links{gap:0}
+  .nav-links a{padding:8px 9px;font-size:12.5px}
+}
+
+/* — hamburger from 1020px down (was 860 — links were overflowing here) — */
+@media(max-width:1020px){
+  .nav-toggle{display:grid}
+  .nav-links{display:none!important}
+  .nav .btn{padding:10px 14px}
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .hero{padding:140px 0 90px}
+  .hero-visual{max-width:620px;margin:12px auto 0;min-height:520px}
+  .split{grid-template-columns:1fr;gap:40px}
+  .glance{position:static}
+}
+
+@media(max-width:860px){
+  .hero{padding-top:126px}
+  .float-export{display:inline-flex;
+    bottom:calc(18px + env(safe-area-inset-bottom));right:calc(18px + env(safe-area-inset-right))}
+  .footer-in{flex-direction:column}
+  .slider{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;
+    margin-inline:-4%;padding:6px 4% 20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .slider::-webkit-scrollbar{display:none}
+  .slider>*{flex:0 0 min(82%,320px);scroll-snap-align:center}
+  .slider .learn-card.wide{flex-basis:86%}
+  .slider-nav{display:flex}
+  /* keep the mock + chips inside the viewport */
+  .hero-visual{min-height:480px}
+  .mock-stack{right:0;top:64px}
+  .vchip-1{left:0;top:96px}
+  .vchip-2{bottom:120px}
+  .vchip-3{right:0;bottom:30px}
+}
+
+@media(max-width:640px){
+  .sec{padding:76px 0}
+  .hero{padding:126px 0 44px}
+  /* hero-visual becomes a clean stacked flow: mock first, chips after */
+  .hero-visual{min-height:auto;display:grid;gap:14px;justify-items:center;padding-top:8px}
+  .hero-visual .enso-bg{position:absolute;width:320px;right:-56px;top:-8px}
+  .hero-visual .kanji-bg{font-size:110px;right:10px;bottom:-8px}
+  .mock-stack{position:relative;right:auto;top:auto;width:min(300px,88vw);order:1;margin:0 auto}
+  .vchip{position:relative;left:auto!important;right:auto!important;top:auto!important;
+    bottom:auto!important;animation:none;width:min(300px,88vw)}
+  .hero-visual .vchip-1{order:2}
+  .hero-visual .vchip-2{order:3}
+  .hero-visual .vchip-3{order:4}
+  .invest-card{padding:38px 26px}
+  .includes{grid-template-columns:1fr}
+  .contact-card{padding:28px 22px}
+  .clipart svg{width:96px}
+}
+
+@media(max-width:420px){
+  .brand-text strong{font-size:12px}
+  .brand-text em{display:none}
+  .brand img{width:42px}
+  .nav .btn{display:none}   /* floating export button already covers this */
+  .hero h1{font-size:34px}
+  .hero-stats{gap:22px}
+  .hero-stats b{font-size:24px}
+  .hero-visual .enso-bg{width:260px;right:-44px}
+  .hero-visual .kanji-bg{font-size:88px}
+  .mock-stack{width:min(270px,92vw)}
+  .vchip{width:min(270px,92vw);font-size:12px}
+}
+
+/* ================================================================
+   PRINTABLE PROPOSAL — mirrors the GKC 3rd Term Action Plan format
+   (framed cover with 3 crests on top · big centred title · date box ·
+   5 affiliation logos at the bottom · petal watermark on every page ·
+   running footer with Ref / Version / Date · formal numbered sections)
+================================================================ */
+#pdf-doc{display:none}
+@media print{
+  @page{size:A4;margin:10mm 10mm 12mm}
+  html,body{background:#fff!important}
+  #landing,.float-export,.print-overlay,.slider-nav{display:none!important}
+  #pdf-doc{display:block!important;font-family:var(--font-serif);color:#161513;font-size:11pt;line-height:1.52;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+  .pdf-watermark{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:0;opacity:.06;color:#8A8577;pointer-events:none}
+  .pdf-watermark svg{width:196mm;height:277mm}
+  .pdf-footer{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:space-between;gap:12mm;z-index:2;border-top:.4pt solid #B9B3A5;padding-top:1.6mm;font-size:7.5pt;color:#6D675C;letter-spacing:.02em}
+
+  .pdf-page{position:relative;z-index:1;page-break-after:always;padding:4mm 5mm 8mm}
+  .pdf-page:last-child{page-break-after:auto}
+  .pdf-h{font-size:13pt;font-weight:700;margin:6.5mm 0 2.5mm;page-break-after:avoid}
+  .pdf-page p{margin:0 0 3mm;text-align:justify}
+  .pdf-ol,.pdf-ul{margin:0 0 3.5mm;padding-left:7mm}
+  .pdf-ol li,.pdf-ul li{margin-bottom:1.4mm;page-break-inside:avoid}
+  .pdf-note{font-style:italic;color:#4C463C}
+  .pdf-aim{border-left:2pt solid #C8102E;padding-left:4mm}
+  .pdf-spec{width:100%;border-collapse:collapse;margin-bottom:4mm}
+  .pdf-spec td{border:.4pt solid #A9A395;padding:2.2mm 3mm;vertical-align:top;font-size:10.5pt}
+  .pdf-spec td:first-child{font-weight:700;width:42mm;background:#F4F2EC}
+  .pdf-fee{font-size:16pt;font-weight:700;text-align:center;letter-spacing:.08em;margin:2mm 0 1mm}
+  .pdf-team li{margin-bottom:2.6mm}
+  .pdf-contact{line-height:1.75}
+  .pdf-sign{display:flex;gap:16mm;margin-top:14mm;page-break-inside:avoid}
+  .pdf-sign>div{flex:1;border-top:.6pt solid #161513;padding-top:2mm;font-size:9.5pt;color:#4C463C;text-align:left}
+
+  /* —— cover, laid out like the sample title page —— */
+  .pdf-cover{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;min-height:252mm;padding:8mm 7mm 6mm}
+  .pdf-cover::before{content:"";position:absolute;inset:0;border:1.2pt solid var(--navy);pointer-events:none}
+  .pdf-top-logos{display:flex;align-items:center;justify-content:center;gap:9mm}
+  .pdf-top-logos img{height:24mm;width:auto;object-fit:contain}
+  .pdf-top-logos .tl-gia{height:27mm}
+  .pdf-top-logos .tl-gkc{height:20mm}
+  .pdf-cover-mid{margin:auto 0;padding:8mm 0}
+  .pdf-cover-mid h1{font-family:var(--font-display);font-size:41pt;font-weight:800;letter-spacing:.24em;text-indent:.24em;line-height:1;color:var(--navy)}
+  .pdf-cover-club{margin-top:11mm;font-family:var(--font-display);font-weight:700;font-size:14pt;letter-spacing:.22em;text-indent:.22em;color:var(--navy)}
+  .pdf-cover-seminar{margin-top:3.5mm;font-size:12pt;font-weight:600;color:#2B3A55}
+  .pdf-datebox{display:inline-block;margin-top:9mm;padding:2.4mm 11mm;border:1.1pt solid var(--navy);font-family:var(--font-display);font-size:11pt;font-weight:700;letter-spacing:.1em;color:var(--navy)}
+  .pdf-cover-venue{margin-top:10mm;font-size:12pt;line-height:2;color:#26324B}
+  .pdf-cover-affs{display:flex;align-items:center;justify-content:center;gap:8mm;margin-top:auto;padding-top:6mm}
+  .pdf-cover-affs img{height:14mm;width:auto;object-fit:contain}
+  .pdf-cover-affs .af-tt{height:9mm}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= SVG LIBRARY (logos + watermark + clip arts + icons) =================
+     REPLACE: every logo below is a lightweight VECTOR STAND-IN drawn to echo the real mark.
+     When you have the official files, swap e.g. <svg><use href="#aff-ttosr"/></svg>
+     for <img src="logos/ttosr-dark.png"> (light backgrounds) / ttosr-light.png (dark backgrounds).
+     The TTOSR wordmark adapts to light/dark automatically via --tt-ink / --tt-gap. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+
+<!-- reusable petal (watermark + GKC figure) -->
+<path id="petalP" d="M0 0C15 -19 44 -19 59 0C44 19 15 19 0 0Z"/>
+
+<symbol id="gkc-mark" viewBox="0 0 120 120">
+  <circle cx="60" cy="60" r="53.5" fill="none" style="stroke:var(--mk-ring,#C8102E)" stroke-width="1.4" opacity=".35"/>
+  <circle cx="60" cy="60" r="44" fill="none" style="stroke:var(--mk-ring,#C8102E)" stroke-width="9.5" stroke-linecap="round" stroke-dasharray="247 29" transform="rotate(-62 60 60)"/>
+  <text x="60" y="69" text-anchor="middle" font-family="Sora, Arial, sans-serif" font-weight="800" font-size="27" letter-spacing="1" style="fill:var(--mk-ink,#181510)">GKC</text>
+</symbol>
+
+<!-- GKC full colour lockup: abstract kicking figure + wordmark -->
+<symbol id="gkc-full" viewBox="0 0 120 78">
+  <g>
+    <use href="#petalP" transform="translate(58 30) rotate(95) scale(1.15 .9)" fill="#2E7FD1"/>
+    <use href="#petalP" transform="translate(58 30) rotate(-18) scale(1.55 .85)" fill="#2E7FD1"/>
+    <use href="#petalP" transform="translate(55 30) rotate(-98) scale(1.35 .9)" fill="#1E4D4B"/>
+    <circle cx="52.5" cy="11.5" r="5.4" fill="#F2D42B"/>
+    <use href="#petalP" transform="translate(54 17) rotate(-38)" fill="#E9326C"/>
+    <use href="#petalP" transform="translate(54 17) rotate(158) scale(.85 .75)" fill="#E9326C"/>
+    <use href="#petalP" transform="translate(66 8) rotate(40) scale(.6 .55)" fill="#F2D42B"/>
+    <use href="#petalP" transform="translate(84 34) rotate(70) scale(.6 .55)" fill="#E9326C"/>
+  </g>
+  <text x="60" y="60" text-anchor="middle" font-family="Sora, Arial, sans-serif" font-weight="800" font-size="14" letter-spacing="1.6" fill="#12395E">GLISTEN</text>
+  <text x="60" y="73.5" text-anchor="middle" font-family="Sora, Arial, sans-serif" font-weight="700" font-size="9" letter-spacing="3.2" fill="#0F5C8C">KARATE CLUB</text>
+</symbol>
+
+<!-- Royal Legendary Martial Art crest -->
+<symbol id="aff-rlma" viewBox="0 0 64 76">
+  <path d="M32 3 56 11v22c0 15-9.5 25.5-24 31C17.5 58.5 8 48 8 33V11Z" fill="#8E1B1B" stroke="#D4AF37" stroke-width="2.5"/>
+  <path d="M32 8 51 14.5V33c0 12-7.5 20.5-19 25-11.5-4.5-19-13-19-25V14.5Z" fill="none" stroke="#D4AF37" stroke-width="1" opacity=".75"/>
+  <path d="M40 16c-8 2-14 8-15 15 5-4 10-5 13-4-6 3-9 8-9 13 4-5 9-7 14-7-3 4-4 8-3 12 2-6 6-10 11-12-1-9-5-15-11-17Z" fill="#D4AF37"/>
+  <path d="M14 62h36l-3.5 8h-29Z" fill="#D4AF37"/>
+  <text x="32" y="68.4" text-anchor="middle" font-family="Sora, Arial, sans-serif" font-weight="800" font-size="6" letter-spacing="1" fill="#5C1220">RLMA</text>
+</symbol>
+
+<!-- Glisten International Academy crest (host school) -->
+<symbol id="aff-gia" viewBox="0 0 64 78">
+  <ellipse cx="32" cy="34" rx="27" ry="31" fill="#D9B857"/>
+  <ellipse cx="32" cy="34" rx="23.5" ry="27.5" fill="#8CCBEC"/>
+  <ellipse cx="32" cy="34" rx="20.5" ry="24.5" fill="#D9B857"/>
+  <ellipse cx="32" cy="34" rx="17.5" ry="21.5" fill="#A5D8F3"/>
+  <path id="gia-arc" d="M10 34a22 26 0 0 1 44 0" fill="none"/>
+  <text font-family="Arial" font-size="3.4" font-weight="700" letter-spacing=".25" fill="#1F3455"><textPath href="#gia-arc" startOffset="50%" text-anchor="middle">GLISTEN INTERNATIONAL ACADEMY</textPath></text>
+  <path d="M32 18l10 3.6v9.8c0 7.2-4.4 11.6-10 13.9-5.6-2.3-10-6.7-10-13.9v-9.8Z" fill="#3F8FD6" stroke="#D9B857" stroke-width="1.3"/>
+  <path d="M32 23l2 5.1 5.1 2-5.1 2L32 37.2l-2-5.1-5.1-2 5.1-2Z" fill="#fff"/>
+  <path d="M24 47.5h16v2.8c-2.6 1.3-5.3 2-8 2s-5.4-.7-8-2Z" fill="#fff" stroke="#D9B857" stroke-width=".8"/>
+  <path d="M32 47.5v5" stroke="#D9B857" stroke-width=".8"/>
+  <path d="M10 67h44l-4 8H14Z" fill="#D9B857"/>
+  <text x="32" y="72.6" text-anchor="middle" font-family="Arial" font-size="3.2" font-weight="700" letter-spacing=".15" fill="#6B5312">SHINING TO A GREATER FUTURE</text>
+</symbol>
+
+<!-- TTOSR wordmark — overlapping letters, outlined S.
+     Light surfaces: dark ink (default). Dark surfaces: set --tt-ink / --tt-gap. -->
+<symbol id="aff-ttosr" viewBox="0 0 268 96">
+  <g fill="var(--tt-ink,#2E2C29)" font-family="Sora, Arial, sans-serif" font-weight="800" font-size="94">
+    <text x="0" y="80">T</text>
+    <text x="46" y="80">T</text>
+    <text x="94" y="80">O</text>
+    <text x="152" y="80" style="stroke:var(--tt-gap,#FFFFFF);stroke-width:6;paint-order:stroke">S</text>
+    <text x="202" y="80">R</text>
+  </g>
+</symbol>
+
+<!-- Bushido Martial Art Academy -->
+<symbol id="aff-bma" viewBox="0 0 64 64">
+  <path id="bma-arc" d="M8 34a24 24 0 0 1 48 0" fill="none"/>
+  <text font-family="Arial" font-size="4" font-weight="700" letter-spacing=".15" fill="var(--aff-ink,#4A4A4A)"><textPath href="#bma-arc" startOffset="50%" text-anchor="middle">BUSHIDO MARTIAL ART ACADEMY</textPath></text>
+  <g fill="none" stroke="var(--aff-ink,#4A4A4A)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 23c-6 3-10 8-10 14 4-3 7-3.6 10-1.4 3-2.2 6-1.6 10 1.4 0-6-4-11-10-14Z"/>
+    <path d="M32 25v15"/>
+    <path d="M22 40c3 3 6 4.4 10 4.4s7-1.4 10-4.4"/>
+  </g>
+  <circle cx="32" cy="20.5" r="2.6" fill="var(--aff-ink,#4A4A4A)"/>
+  <text x="32" y="56" text-anchor="middle" font-family="Sora, Arial, sans-serif" font-weight="800" font-size="9" letter-spacing="1" fill="var(--aff-ink,#4A4A4A)">B.M.A</text>
+</symbol>
+
+<!-- Federal Capital Territory Karate Association -->
+<symbol id="aff-fct" viewBox="0 0 64 64">
+  <circle cx="32" cy="32" r="29" fill="#fff" stroke="#1B7A3D" stroke-width="2"/>
+  <path id="fct-t" d="M9 32a23 23 0 0 1 46 0" fill="none"/>
+  <path id="fct-b" d="M11 32a21 21 0 0 0 42 0" fill="none"/>
+  <text font-family="Arial" font-size="4.8" font-weight="700" letter-spacing=".3" fill="#1B7A3D"><textPath href="#fct-t" startOffset="50%" text-anchor="middle">FEDERAL CAPITAL TERRITORY</textPath></text>
+  <text font-family="Arial" font-size="4.8" font-weight="700" letter-spacing=".3" fill="#1B7A3D"><textPath href="#fct-b" startOffset="50%" text-anchor="middle">• KARATE ASSOCIATION •</textPath></text>
+  <circle cx="32" cy="32" r="16" fill="#1B7A3D"/>
+  <path d="M32 16a16 16 0 0 1 0 32 8 8 0 0 1 0-16 8 8 0 0 0 0-16Z" fill="#fff"/>
+  <circle cx="32" cy="24" r="2.5" fill="#1B7A3D"/>
+  <circle cx="32" cy="40" r="2.5" fill="#fff"/>
+</symbol>
+
+<!-- Nigerian Karate Association -->
+<symbol id="aff-nka" viewBox="0 0 64 64">
+  <circle cx="32" cy="32" r="29" fill="#fff" stroke="#2E9E4F" stroke-width="2.4"/>
+  <circle cx="32" cy="32" r="21.5" fill="none" stroke="#2E9E4F" stroke-width=".9"/>
+  <clipPath id="nka-band"><circle cx="32" cy="32" r="21.5"/></clipPath>
+  <rect x="26" y="10.5" width="12" height="43" fill="#2E9E4F" clip-path="url(#nka-band)"/>
+  <g fill="none" stroke="#141210" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="32" cy="21.5" r="3"/>
+    <path d="M32 24.5V38"/>
+    <path d="M32 27 23 31M32 27l9-3.5"/>
+    <path d="M32 38l-6 9M32 38l6 9"/>
+  </g>
+  <path id="nka-t" d="M11 32a21 21 0 0 1 42 0" fill="none"/>
+  <path id="nka-b" d="M13.5 32a18.5 18.5 0 0 0 37 0" fill="none"/>
+  <text font-family="Arial" font-weight="700" font-size="5.8" letter-spacing=".4" fill="#1B7A3D"><textPath href="#nka-t" startOffset="50%" text-anchor="middle">NIGERIAN KARATE</textPath></text>
+  <text font-family="Arial" font-weight="700" font-size="5.8" letter-spacing=".4" fill="#1B7A3D"><textPath href="#nka-b" startOffset="50%" text-anchor="middle">ASSOCIATION</textPath></text>
+  <rect x="6" y="30.4" width="3.4" height="3.4" transform="rotate(45 7.7 32.1)" fill="#1B7A3D"/>
+  <rect x="54.6" y="30.4" width="3.4" height="3.4" transform="rotate(45 56.3 32.1)" fill="#1B7A3D"/>
+</symbol>
+
+<!-- Karate Federation of Nigeria -->
+<symbol id="aff-kfn" viewBox="0 0 64 64">
+  <circle cx="32" cy="32" r="29" fill="#fff" stroke="#1B5E36" stroke-width="2.2"/>
+  <circle cx="32" cy="32" r="22" fill="none" stroke="#1B5E36" stroke-width=".8"/>
+  <path id="kfn-t" d="M11.5 32a20.5 20.5 0 0 1 41 0" fill="none"/>
+  <path id="kfn-b" d="M14 32a18 18 0 0 0 36 0" fill="none"/>
+  <text font-family="Arial" font-weight="700" font-size="5.2" letter-spacing=".3" fill="#1B5E36"><textPath href="#kfn-t" startOffset="50%" text-anchor="middle">KARATE FEDERATION</textPath></text>
+  <text font-family="Arial" font-weight="700" font-size="5.2" letter-spacing=".3" fill="#1B5E36"><textPath href="#kfn-b" startOffset="50%" text-anchor="middle">OF NIGERIA</textPath></text>
+  <g fill="none" stroke="#8E1B1B" stroke-width="1.8" stroke-linecap="round">
+    <circle cx="27" cy="21.5" r="2.3"/><path d="M27 24v9M27 26l-6 3M27 26l7 1M27 33l-4 8M27 33l5 7"/>
+    <circle cx="40" cy="23.5" r="2.3"/><path d="M40 26v8M40 28l-6 5M40 28l6-2M40 34l-5 7M40 34l4 8"/>
+  </g>
+  <rect x="25" y="45" width="14" height="7" rx="1" fill="#A32121"/>
+  <text x="32" y="50.4" text-anchor="middle" font-family="Arial" font-weight="700" font-size="5" fill="#fff" letter-spacing=".8">KFN</text>
+</symbol>
+
+<!-- watermark: soft petal scatter, like the sample title page -->
+<symbol id="wm-petals" viewBox="0 0 210 297">
+  <g fill="currentColor">
+    <use href="#petalP" transform="translate(28 42) rotate(-28)"/>
+    <use href="#petalP" transform="translate(150 58) rotate(24) scale(1.5)"/>
+    <use href="#petalP" transform="translate(66 96) rotate(72) scale(1.15)"/>
+    <use href="#petalP" transform="translate(176 128) rotate(-14) scale(1.3)"/>
+    <use href="#petalP" transform="translate(24 176) rotate(48) scale(1.2)"/>
+    <use href="#petalP" transform="translate(112 196) rotate(-58)"/>
+    <use href="#petalP" transform="translate(52 252) rotate(12) scale(1.55)"/>
+    <use href="#petalP" transform="translate(158 244) rotate(84) scale(1.1)"/>
+    <use href="#petalP" transform="translate(98 148) rotate(30) scale(.8)"/>
+    <use href="#petalP" transform="translate(140 18) rotate(-52) scale(.9)"/>
+    <use href="#petalP" transform="translate(10 108) rotate(-80) scale(.85)"/>
+    <use href="#petalP" transform="translate(190 205) rotate(160) scale(.9)"/>
+  </g>
+</symbol>
+
+<!-- clip arts: light line-art figures -->
+<symbol id="clip-stance" viewBox="0 0 120 90">
+  <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="58" cy="16" r="8"/>
+    <path d="M58 24 50 50"/>
+    <path d="M57 30 88 42"/><path d="M91 40v6M88 43h6"/>
+    <path d="M57 32 36 46"/><circle cx="33" cy="47" r="3"/>
+    <path d="M50 50 76 64 76 84"/>
+    <path d="M50 50 28 66 22 84"/>
+    <path d="M12 86h96" stroke-width="1.4" stroke-dasharray="2 7" opacity=".55"/>
+  </g>
+  <path d="M44 47.5 56 51.5" stroke="var(--red,#C8102E)" stroke-width="3.4" stroke-linecap="round" fill="none"/>
+  <circle cx="103" cy="22" r="2.6" fill="var(--red,#C8102E)"/>
+</symbol>
+<symbol id="clip-aware" viewBox="0 0 120 90">
+  <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28 54C40 40 80 40 92 54 80 68 40 68 28 54Z"/>
+    <circle cx="60" cy="54" r="8.5"/>
+    <path d="M60 28v-9M37 34l-6-8M83 34l6-8"/>
+  </g>
+  <circle cx="60" cy="54" r="2.8" fill="var(--red,#C8102E)"/>
+  <circle cx="104" cy="24" r="2.4" fill="var(--red,#C8102E)"/>
+</symbol>
+<symbol id="clip-practice" viewBox="0 0 120 90">
+  <g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="33" cy="26" r="7"/><path d="M33 33v22M33 38 21 30M33 38l12-8M33 55l-8 19M33 55l8 19"/>
+    <circle cx="87" cy="26" r="7"/><path d="M87 33v22M87 38 75 32M87 38l12-8M87 55l-8 19M87 55l8 19"/>
+    <path d="M12 82h96" stroke-width="1.4" stroke-dasharray="2 7" opacity=".55"/>
+  </g>
+  <circle cx="60" cy="42" r="2.6" fill="var(--red,#C8102E)"/>
+</symbol>
+<symbol id="clip-community" viewBox="0 0 120 90">
+  <g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="34" cy="40" r="6"/><path d="M24 62c2-9 6-13 10-13s8 4 10 13"/>
+    <circle cx="86" cy="40" r="6"/><path d="M76 62c2-9 6-13 10-13s8 4 10 13"/>
+    <circle cx="60" cy="34" r="6.5"/><path d="M49 58c2.5-10 7-14 11-14s8.5 4 11 14"/>
+    <path d="M18 42C32 22 88 22 102 42" stroke-width="1.6" stroke-dasharray="1 6"/>
+  </g>
+  <circle cx="60" cy="74" r="2.6" fill="var(--red,#C8102E)"/>
+</symbol>
+
+<!-- icons -->
+<symbol id="ic-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.8 12 5.8 21.5 12 21.5 12 18 18.2 12 18.2 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="2.8"/></symbol>
+<symbol id="ic-shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.1c0 4.9-3.6 8.5-7.5 9.9-3.9-1.4-7.5-5-7.5-9.9V6L12 3Z"/><path d="M8.7 12.2l2.3 2.3 4.3-4.7"/></symbol>
+<symbol id="ic-boundary" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" stroke-dasharray="4 3.2"/><circle cx="12" cy="12" r="2.6"/></symbol>
+<symbol id="ic-mic" viewBox="0 0 24 24"><rect x="9.2" y="3" width="5.6" height="10.5" rx="2.8"/><path d="M5.5 11.2a6.5 6.5 0 0 0 13 0"/><path d="M12 17.7V21"/><path d="M9 21h6"/></symbol>
+<symbol id="ic-shield-bolt" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.1c0 4.9-3.6 8.5-7.5 9.9-3.9-1.4-7.5-5-7.5-9.9V6L12 3Z"/><path d="M12.9 7.5l-3 4.2h2.5L9.9 16.4l4.3-5.2h-2.5l1.2-3.7Z"/></symbol>
+<symbol id="ic-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.7"/><path d="M9.3 9.4a2.8 2.8 0 1 1 3.9 2.6c-.8.4-1.2 1-1.2 1.8"/><path d="M12 16.6h.01"/></symbol>
+<symbol id="ic-flag" viewBox="0 0 24 24"><path d="M5 21V4"/><path d="M5 4.8c2-1 4-1 6 0s4 1 6 0v8.4c-2 1-4 1-6 0s-4-1-6 0"/></symbol>
+<symbol id="ic-cap" viewBox="0 0 24 24"><path d="M2.2 9.2 12 4.4l9.8 4.8L12 14 2.2 9.2Z"/><path d="M6.2 11.4v4.7c0 1.6 2.6 2.9 5.8 2.9s5.8-1.3 5.8-2.9v-4.7"/><path d="M21.8 9.2v4.6"/></symbol>
+<symbol id="ic-case" viewBox="0 0 24 24"><rect x="3" y="7.5" width="18" height="12.5" rx="2"/><path d="M9 7.5V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1.5"/><path d="M3 12.7h18"/></symbol>
+<symbol id="ic-home" viewBox="0 0 24 24"><path d="M3.5 10.8 12 3.7l8.5 7.1"/><path d="M5.5 9.3V20h13V9.3"/><path d="M10 20v-5.2h4V20"/></symbol>
+<symbol id="ic-users" viewBox="0 0 24 24"><circle cx="9" cy="8.2" r="3.6"/><path d="M2.6 20c.6-3.7 3.2-5.7 6.4-5.7s5.8 2 6.4 5.7"/><path d="M15.4 5a3.6 3.6 0 0 1 0 6.5"/><path d="M17.6 15c2.2.8 3.5 2.5 3.8 5"/></symbol>
+<symbol id="ic-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M9 21h6"/><path d="M12 16.5V21"/></symbol>
+<symbol id="ic-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.7"/><path d="M10 8.3l5.7 3.7L10 15.7V8.3Z"/></symbol>
+<symbol id="ic-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.7"/><path d="M15.6 8.4l-2 5.2-5.2 2 2-5.2 5.2-2Z"/></symbol>
+<symbol id="ic-chat" viewBox="0 0 24 24"><path d="M3 6.4A2.4 2.4 0 0 1 5.4 4h11.2A2.4 2.4 0 0 1 19 6.4v6.2a2.4 2.4 0 0 1-2.4 2.4H10l-4.2 3.6v-3.6h-.4A2.4 2.4 0 0 1 3 12.6V6.4Z"/><path d="M7.5 9.7h.01M11.2 9.7h.01M14.9 9.7h.01"/></symbol>
+<symbol id="ic-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.6v2M12 19.4v2M2.6 12h2M19.4 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></symbol>
+<symbol id="ic-check-c" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.7"/><path d="M8.3 12.4l2.5 2.5 4.9-5.6"/></symbol>
+<symbol id="ic-send" viewBox="0 0 24 24"><path d="M21.5 2.5 11 13"/><path d="M21.5 2.5 14.5 21.5l-3.5-8.5-8.5-3.5 19-7Z"/></symbol>
+<symbol id="ic-download" viewBox="0 0 24 24"><path d="M12 3.5V15"/><path d="M7.5 10.5 12 15l4.5-4.5"/><path d="M4.5 19.5h15"/></symbol>
+<symbol id="ic-mail" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3.5 7.2 8.5 6 8.5-6"/></symbol>
+<symbol id="ic-phone" viewBox="0 0 24 24"><path d="M5.2 3.8h3.3l1.7 4.2-2.2 1.7a12.9 12.9 0 0 0 6.3 6.3l1.7-2.2 4.2 1.7v3.3a1.8 1.8 0 0 1-1.9 1.8C10.2 20.8 3.2 13.8 3.4 5.7a1.8 1.8 0 0 1 1.8-1.9Z"/></symbol>
+<symbol id="ic-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.7"/><path d="M3.3 12h17.4"/><path d="M12 3.3a13.5 13.5 0 0 1 0 17.4 13.5 13.5 0 0 1 0-17.4Z"/></symbol>
+<symbol id="ic-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10.2h18"/></symbol>
+<symbol id="ic-pin" viewBox="0 0 24 24"><path d="M12 21.4S5 15.7 5 10.3a7 7 0 0 1 14 0c0 5.4-7 11.1-7 11.1Z"/><circle cx="12" cy="10.2" r="2.5"/></symbol>
+<symbol id="ic-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.7"/><path d="M12 7.2V12l3.4 2"/></symbol>
+<symbol id="ic-arrow-down" viewBox="0 0 24 24"><path d="M12 4.5v14.5"/><path d="M6.5 13.5 12 19l5.5-5.5"/></symbol>
+<symbol id="ic-alert" viewBox="0 0 24 24"><path d="M12 3.6 21.4 20H2.6L12 3.6Z"/><path d="M12 9.8v4.4"/><path d="M12 17.2h.01"/></symbol>
+<symbol id="ic-check" viewBox="0 0 24 24"><path d="M4.5 12.6l4.8 4.8L19.5 6.6"/></symbol>
+</defs></svg>
+
+<!-- ================================================================
+     LANDING PAGE
+================================================================ -->
+<div id="landing">
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="Glisten Karate Club — back to top">
+      <img src="/assests/logo/gkc.png" width="50" height="auto">
+      <span class="brand-text"><strong>GLISTEN KARATE CLUB</strong><em>School Seminar Proposal</em></span>
+    </a>
+    <nav class="nav-links" aria-label="Proposal sections">
+      <a href="#overview" data-spylink="overview">Overview</a>
+      <a href="#objectives" data-spylink="objectives">Objectives</a>
+      <a href="#programme" data-spylink="programme">Programme</a>
+      <a href="#team" data-spylink="team">Instruction Team</a>
+      <a href="#logistics" data-spylink="logistics">Logistics</a>
+      <a href="#investment" data-spylink="investment">Investment</a>
+    </nav>
+
+  <button class="btn btn-dark js-export"><svg class="ic"><use href="#ic-download"/></svg>Export PDF</button>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileSidebar">
+    <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+  </div>
+</header>
+
+<div class="mobile-sidebar" id="mobileSidebar" aria-hidden="true">
+  <div class="ms-backdrop" data-close-sidebar></div>
+  <div class="ms-panel">
+    <div class="ms-head">
+      <a class="brand" href="#top" aria-label="Home">
+        <img src="/assests/logo/gkc.png" width="44" height="auto" alt="">
+        <span class="brand-text"><strong>GLISTEN KARATE CLUB</strong><em>School Seminar Proposal</em></span>
+      </a>
+      <button class="ms-close" id="msClose" aria-label="Close menu"><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <nav class="ms-links" aria-label="Mobile sections">
+      <a href="#overview" data-spylink="overview">Overview</a>
+      <a href="#objectives" data-spylink="objectives">Objectives</a>
+      <a href="#programme" data-spylink="programme">Programme</a>
+      <a href="#team" data-spylink="team">Instruction Team</a>
+      <a href="#logistics" data-spylink="logistics">Logistics</a>
+      <a href="#investment" data-spylink="investment">Investment</a>
+    </nav>
+    <div class="ms-cta">
+      <button class="btn btn-dark js-export" style="width:100%;justify-content:center"><svg class="ic"><use href="#ic-download"/></svg>Export PDF</button>
+      <a href="#top" class="btn btn-ghost" style="justify-content:center;width:100%">Back to top</a>
+    </div>
+  </div>
+</div>
+
+
+<main>
+
+<!-- 1 · HERO / COVER -->
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div class="hero-copy reveal">
+      <span class="pill-eyebrow"><span class="dot"></span>Official Proposal · Glisten Karate Club</span>
+      <h1>Building Awareness.<br>Developing Confidence.<br><span class="accent">Promoting Safer Choices.</span></h1>
+      <p class="hero-sub">A practical, interactive self-defence and personal safety seminar designed for the Glisten school community — bringing together students, staff, parents and guardians for a shared learning experience.</p>
+      <div class="hero-meta">
+        <span class="meta-chip"><b>Prepared for</b><span data-config="schoolName">Glisten International Academy</span></span>
+        <span class="meta-chip"><b>Prepared by</b><span>Glisten Karate Club</span></span>
+        <span class="meta-chip"><b>Date</b><span data-config="proposalDate">September 2026</span></span>
+      </div>
+      <div class="hero-cta">
+        <a href="#overview" class="btn btn-red">View Proposal <svg class="ic"><use href="#ic-arrow-down"/></svg></a>
+        <button class="btn btn-ghost js-export"><svg class="ic"><use href="#ic-download"/></svg>Download / Export PDF</button>
+      </div>
+      <div class="hero-stats">
+        <div><b>4</b><span>Audience groups</span></div>
+        <div><b>7</b><span>Key learning areas</span></div>
+        <div><b>7</b><span>Programme stages</span></div>
+        <div><b>3</b><span>Instructors</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal" style="--d:.15s">
+      <img class="enso-bg" src="/assests/logo/gkc.png" alt="" aria-hidden="true" style="object-fit:contain">
+      <span class="kanji-bg" aria-hidden="true">押忍</span>
+      <div class="mock-stack">
+        <div class="mock-back" aria-hidden="true"></div>
+        <!-- REPLACE: this mock cover can be swapped for a real seminar photograph -->
+        <div class="mock-front">
+          <div class="mock-logos">
+            <img src="/assests/logo/gkc.png" width="30" height="30" alt="GKC" style="border-radius:50%">
+            <span class="mock-badge">RLMA</span><span class="mock-badge">TTOSR</span><span class="mock-badge">B.M.A</span><span class="mock-badge">NKA</span><span class="mock-badge">KFN</span>
+          </div>
+          <hr class="mock-rule">
+          <h3>PROPOSAL</h3>
+          <div class="rline"></div>
+          <p class="mock-sub">School Self-Defence &amp; Personal Safety Seminar</p>
+          <p class="mock-line">Glisten Karate Club · <span data-config="proposalDate">September 2026</span></p>
+          <span class="mock-seal"><img src="/assests/logo/gkc.png" width="34" height="34" alt="" style="border-radius:50%;background:#fff;padding:2px"></span>
+        </div>
+      </div>
+      <div class="vchip vchip-1"><svg class="ic"><use href="#ic-users"/></svg>Whole-school programme</div>
+      <div class="vchip vchip-2"><svg class="ic"><use href="#ic-shield"/></svg>Age-appropriate delivery</div>
+      <div class="vchip vchip-3"><svg class="ic"><use href="#ic-play"/></svg>Practical &amp; interactive</div>
+    </div>
+  </div>
+</section>
+
+<!-- marquee -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-group">AWARENESS<span class="mdot"></span>CONFIDENCE<span class="mdot"></span>PREVENTION<span class="mdot"></span>RESPECT<span class="mdot"></span>DISCIPLINE<span class="mdot"></span>COMMUNITY<span class="mdot"></span>PREPAREDNESS<span class="mdot"></span></span>
+    <span class="marquee-group">AWARENESS<span class="mdot"></span>CONFIDENCE<span class="mdot"></span>PREVENTION<span class="mdot"></span>RESPECT<span class="mdot"></span>DISCIPLINE<span class="mdot"></span>COMMUNITY<span class="mdot"></span>PREPAREDNESS<span class="mdot"></span></span>
+  </div>
+</div>
+
+<!-- logo bar -->
+<section class="logos">
+  <div class="container">
+    <p class="logos-label">Host School &amp; Instructional Credentials</p>
+    <div class="logos-row">
+      <div class="logo-main">
+        <img src="/assests/logo/gkc.png" width="75" height="auto">
+        <div><strong>Glisten Karate Club</strong><span>Lead instructional identity</span></div>
+      </div>
+      <span class="logos-div"></span>
+      <div class="aff"><img src="/assests/logo/rlma.png" width="50" height="auto"><span>Royal Legendary Martial Art</span></div>
+      
+      <span class="logos-div"></span>
+      <div class="aff"><img src="/assests/logo/ttosr.png" width="50" height="auto"><span>TTOSR</span></div>
+      <div class="aff"><img src="/assests/logo/bma.png" width="50" height="auto"><span>Bushido Martial Art Academy</span></div>
+      <div class="aff"><img src="/assests/logo/fctkc.png" width="50" height="auto"><span>FCT Karate Association</span></div>
+      <div class="aff"><img src="/assests/logo/nka.png" width="50" height="auto"><span>Nigerian Karate Association</span></div>
+      <div class="aff"><img src="/assests/logo/kfn.png" width="50" height="auto"><span>Karate Federation of Nigeria</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · PROPOSAL OVERVIEW -->
+<section class="sec" id="overview" data-spy>
+  <div class="container split">
+    <div class="reveal">
+      <span class="eyebrow">Proposal Overview</span>
+      <h2>A Seminar for the Whole School Community</h2>
+      <p class="lead">Self-defence extends beyond physical techniques.</p>
+      <p class="body">A meaningful personal-safety programme should help people understand how to recognise situations, make safer decisions, communicate effectively, manage pressure and respond appropriately when confronted with a potential threat.</p>
+      <p class="body">Glisten Karate Club proposes a school-wide <strong>Self-Defence &amp; Personal Safety Seminar</strong> designed to bring these principles into an accessible and practical learning environment — creating an opportunity for students, teachers, staff, parents and guardians to learn together, and to develop a shared understanding of personal safety.</p>
+      <figure class="clipart" aria-hidden="true">
+        <svg viewBox="0 0 120 90"><use href="#clip-stance"/></svg>
+        <figcaption>Awareness<i>·</i>Composure<i>·</i>Control</figcaption>
+      </figure>
+    </div>
+    <aside class="glance reveal" style="--d:.12s">
+      <h3>At a glance</h3>
+      <dl>
+        <div><dt>Audience</dt><dd>Students, staff, parents &amp; guardians</dd></div>
+        <div><dt>Format</dt><dd>Interactive seminar — presentation, demonstration, practice &amp; discussion</dd></div>
+        <div><dt>Venue</dt><dd data-config="venue">Glisten International Academy, Jahi, Abuja FCT</dd></div>
+        <div><dt>Date</dt><dd>To be agreed with School Management</dd></div>
+        <div><dt>Duration</dt><dd>To be agreed with the final programme structure</dd></div>
+        <div><dt>Investment</dt><dd>To be agreed — see Proposed Investment</dd></div>
+      </dl>
+      <div class="belt"></div>
+    </aside>
+  </div>
+</section>
+
+<!-- 3 · WHY THIS SEMINAR -->
+<section class="sec alt" id="why">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Why This Seminar</span>
+      <h2>Safety Begins With Awareness</h2>
+      <p class="sec-sub">Many situations can be managed — or avoided entirely — before they become physical confrontations. The seminar therefore focuses on developing participants' ability to:</p>
+    </div>
+    <div class="check-grid slider">
+      <div class="check reveal"><svg class="ic"><use href="#ic-check"/></svg><span>Pay attention to their surroundings</span></div>
+      <div class="check reveal" style="--d:.05s"><svg class="ic"><use href="#ic-eye"/></svg><span>Recognise potentially unsafe situations</span></div>
+      <div class="check reveal" style="--d:.1s"><svg class="ic"><use href="#ic-alert"/></svg><span>Identify warning signs</span></div>
+      <div class="check reveal" style="--d:.15s"><svg class="ic"><use href="#ic-boundary"/></svg><span>Establish and communicate personal boundaries</span></div>
+      <div class="check reveal" style="--d:.2s"><svg class="ic"><use href="#ic-compass"/></svg><span>Make safer decisions under pressure</span></div>
+      <div class="check reveal" style="--d:.25s"><svg class="ic"><use href="#ic-mic"/></svg><span>Use verbal communication to de-escalate situations</span></div>
+      <div class="check reveal" style="--d:.3s"><svg class="ic"><use href="#ic-help"/></svg><span>Seek appropriate assistance</span></div>
+      <div class="check reveal" style="--d:.35s"><svg class="ic"><use href="#ic-shield-bolt"/></svg><span>Respond appropriately when physical intervention becomes unavoidable</span></div>
+    </div>
+    <div class="callout reveal">The emphasis is on <strong>awareness, prevention, responsible response and personal confidence</strong> — rather than encouraging confrontation.</div>
+    <figure class="clipart reveal" aria-hidden="true">
+      <svg viewBox="0 0 120 90"><use href="#clip-aware"/></svg>
+      <figcaption>See early<i>·</i>Act early</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 4 · WHO IT IS FOR -->
+<section class="sec" id="who">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Who It Is For</span>
+      <h2>One Programme, Four Audiences</h2>
+    </div>
+    <div class="quad-grid slider">
+      <div class="card reveal"><span class="a-ic"><svg class="ic"><use href="#ic-cap"/></svg></span><h3>Students</h3><p>Age-appropriate personal safety awareness, confidence, boundaries and practical responses.</p></div>
+      <div class="card reveal" style="--d:.08s"><span class="a-ic"><svg class="ic"><use href="#ic-case"/></svg></span><h3>Teachers &amp; Staff</h3><p>Practical awareness and response principles applicable within and outside the school environment.</p></div>
+      <div class="card reveal" style="--d:.16s"><span class="a-ic"><svg class="ic"><use href="#ic-home"/></svg></span><h3>Parents &amp; Guardians</h3><p>Understanding how to reinforce personal-safety awareness and responsible behaviour at home.</p></div>
+      <div class="card reveal" style="--d:.24s"><span class="a-ic"><svg class="ic"><use href="#ic-users"/></svg></span><h3>The School Community</h3><p>Creating a shared culture of awareness, responsibility and preparedness.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · WHAT PARTICIPANTS WILL LEARN -->
+<section class="sec" id="objectives" data-spy>
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What Participants Will Learn</span>
+      <h2>Key Learning Areas</h2>
+      <p class="sec-sub">Seven practical areas of personal safety, delivered in a style adapted to each age group.</p>
+    </div>
+    <div class="learn-grid slider">
+      <div class="card learn-card reveal"><div class="l-top"><span class="l-ic"><svg class="ic"><use href="#ic-eye"/></svg></span><span class="l-no">01</span></div><h3>Situational Awareness</h3><p>Understanding the environment, identifying unusual behaviour and recognising potential warning signs.</p></div>
+      <div class="card learn-card reveal" style="--d:.06s"><div class="l-top"><span class="l-ic"><svg class="ic"><use href="#ic-shield"/></svg></span><span class="l-no">02</span></div><h3>Prevention &amp; Risk Awareness</h3><p>How everyday choices, positioning and awareness can reduce exposure to unnecessary risk.</p></div>
+      <div class="card learn-card reveal" style="--d:.12s"><div class="l-top"><span class="l-ic"><svg class="ic"><use href="#ic-boundary"/></svg></span><span class="l-no">03</span></div><h3>Boundaries &amp; Assertive Communication</h3><p>Personal boundaries, and appropriate ways to communicate clearly and confidently.</p></div>
+      <div class="card learn-card reveal" style="--d:.18s"><div class="l-top"><span class="l-ic"><svg class="ic"><use href="#ic-mic"/></svg></span><span class="l-no">04</span></div><h3>Verbal De-escalation</h3><p>How communication, composure and decision-making can help prevent situations from escalating.</p></div>
+      <div class="card learn-card reveal" style="--d:.24s"><div class="l-top"><span class="l-ic"><svg class="ic"><use href="#ic-shield-bolt"/></svg></span><span class="l-no">05</span></div><h3>Protective Responses</h3><p>Simple, practical principles for protecting oneself and creating an opportunity to move away from danger.</p></div>
+      <div class="card learn-card reveal" style="--d:.3s"><div class="l-top"><span class="l-ic"><svg class="ic"><use href="#ic-help"/></svg></span><span class="l-no">06</span></div><h3>Getting Help</h3><p>When and how to seek assistance from trusted adults, authorities, security personnel or emergency services.</p></div>
+      <div class="card learn-card wide reveal" style="--d:.36s"><div class="l-top"><span class="l-ic"><svg class="ic"><use href="#ic-flag"/></svg></span><span class="l-no">07</span></div><h3>Post-Incident Awareness</h3><p>What to do after an incident — including reporting, seeking assistance and preserving personal safety.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · SEMINAR EXPERIENCE -->
+<section class="sec alt" id="programme" data-spy>
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">The Seminar Experience</span>
+    </div>
+    <div class="display-band reveal">Learn<span>.</span> See<span>.</span> Practise<span>.</span> Reflect<span>.</span></div>
+    <p class="sec-sub center reveal" style="margin-bottom:42px">Rather than being a lecture alone, the seminar can combine several learning methods:</p>
+    <div class="method-grid slider">
+      <div class="card reveal"><span class="a-ic"><svg class="ic"><use href="#ic-monitor"/></svg></span><h3>Presentation</h3><p>Clear explanations of personal-safety principles.</p></div>
+      <div class="card reveal" style="--d:.06s"><span class="a-ic"><svg class="ic"><use href="#ic-play"/></svg></span><h3>Demonstration</h3><p>Instructors demonstrate practical concepts in an easy-to-understand format.</p></div>
+      <div class="card reveal" style="--d:.12s"><span class="a-ic"><svg class="ic"><use href="#ic-users"/></svg></span><h3>Guided Participation</h3><p>Safe, controlled exercises where appropriate.</p></div>
+      <div class="card reveal" style="--d:.18s"><span class="a-ic"><svg class="ic"><use href="#ic-compass"/></svg></span><h3>Scenario-Based Learning</h3><p>Age-appropriate situations used to explore decision-making and responses.</p></div>
+      <div class="card reveal" style="--d:.24s"><span class="a-ic"><svg class="ic"><use href="#ic-chat"/></svg></span><h3>Discussion &amp; Q&amp;A</h3><p>Participants ask questions and discuss real-life concerns.</p></div>
+    </div>
+    <p class="exp-note reveal">This makes the programme suitable for a school-wide audience, while allowing activities to be adapted to the age and needs of each group.</p>
+    <figure class="clipart reveal" aria-hidden="true">
+      <svg viewBox="0 0 120 90"><use href="#clip-practice"/></svg>
+      <figcaption>Guided<i>·</i>Controlled<i>·</i>Encouraging</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 7 · SCHOOL COMMUNITY BENEFITS -->
+<section class="sec" id="benefits">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">School Community Benefits</span>
+      <h2>More Than a Self-Defence Class</h2>
+      <p class="sec-sub">The proposed seminar can support the school's broader objectives around:</p>
+    </div>
+    <div class="mini-grid slider">
+      <div class="card reveal"><span class="a-ic"><svg class="ic"><use href="#ic-eye"/></svg></span><h3>Awareness</h3><p>More observant, safety-conscious members of the school community.</p></div>
+      <div class="card reveal" style="--d:.06s"><span class="a-ic"><svg class="ic"><use href="#ic-sun"/></svg></span><h3>Confidence</h3><p>Calmness and confidence without promoting unnecessary confrontation.</p></div>
+      <div class="card reveal" style="--d:.12s"><span class="a-ic"><svg class="ic"><use href="#ic-check-c"/></svg></span><h3>Responsibility</h3><p>Understanding the consequences of decisions and actions.</p></div>
+      <div class="card reveal" style="--d:.18s"><span class="a-ic"><svg class="ic"><use href="#ic-send"/></svg></span><h3>Communication</h3><p>Communicating boundaries and seeking help appropriately.</p></div>
+      <div class="card reveal" style="--d:.24s"><span class="a-ic"><svg class="ic"><use href="#ic-users"/></svg></span><h3>Community</h3><p>A shared understanding of personal safety across students, staff and families.</p></div>
+    </div>
+    <figure class="clipart reveal" aria-hidden="true">
+      <svg viewBox="0 0 120 90"><use href="#clip-community"/></svg>
+      <figcaption>One school<i>·</i>One safety culture</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 8 · INSTRUCTION TEAM -->
+<section class="sec alt" id="team" data-spy>
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Instruction Team</span>
+      <h2>Facilitated by the GKC Instruction Team</h2>
+      <p class="sec-sub">Supported by the club's instructional affiliations — TTOSR, Bushido Martial Art Academy, FCT Karate Association, NKA and KFN — across the primary and secondary sessions.</p>
+    </div>
+    <div class="team-grid slider">
+      <!-- REPLACE: swap the monogram avatars for instructor photographs when available -->
+      <div class="card t-card reveal">
+        <div class="t-top"><span class="avatar">SI</span><span class="t-aff" style="display:inline-flex;align-items:center;gap:6px"><img src="/assests/logo/rlma.png" width="22" height="22" alt=""></span></div>
+        <h3>Sensei Isaac</h3>
+        <p class="t-role">General Lead · Primary Session Instructor</p>
+        <p class="t-bio">Sensei Isaac leads the Glisten Karate Club's primary-session instruction and serves as the senior instructor overseeing the school's broader karate programme.</p>
+      </div>
+      <div class="card t-card reveal" style="--d:.08s">
+        <div class="t-top"><span class="avatar">SR</span><span class="t-aff" style="display:inline-flex;align-items:center;gap:6px"><img src="/assests/logo/ttosr.png" width="22" height="auto" alt=""></span></div>
+        <h3>Sensei Richqrd</h3>
+        <p class="t-role">Secondary Session Instructor</p>
+        <p class="t-bio">Sensei Richqrd leads the secondary-session delivery, specialising in scenario-based learning and age-appropriate protective responses for older students.</p>
+      </div>
+      <div class="card t-card reveal" style="--d:.16s">
+        <div class="t-top"><span class="avatar">SD</span><span class="t-aff" style="display:inline-flex;align-items:center;gap:6px"><img src="/assests/logo/gkc.png" width="22" height="22" alt=""></span></div>
+        <h3>Sempai Priscilia</h3>
+        <p class="t-role">Assistant Instructor </p>
+        <p class="t-bio">Sempai Priscilia supports guided practice across groups and each session.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · LOGISTICS -->
+<section class="sec" id="logistics" data-spy>
+  <div class="container split">
+    <div class="reveal">
+      <span class="eyebrow">Logistics &amp; Requirements</span>
+      <h2>What We Would Need From The School</h2>
+      <p class="sec-sub">The seminar is designed to run within the school environment with minimal disruption to the school day. Final details are agreed with School Management during planning.</p>
+      <div class="note reveal"><svg class="ic"><use href="#ic-alert"/></svg><div><b>Safety first.</b> All practical activities are age-appropriate, non-competitive and conducted on controlled surfaces with matting where required.<small>Participation in physical segments is always optional and supervised.</small></div></div>
+    </div>
+    <dl class="spec reveal" style="--d:.12s">
+      <div class="row"><dt>Venue</dt><dd>School hall / covered gym area (to be confirmed)</dd></div>
+      <div class="row"><dt>Date &amp; Time</dt><dd>To be agreed — a school day or Saturday morning slot</dd></div>
+      <div class="row"><dt>Duration</dt><dd>60–90 minutes per group (adjustable)</dd></div>
+      <div class="row"><dt>Groups</dt><dd>Primary · Secondary · Staff · Parents (separate or combined)</dd></div>
+      <div class="row"><dt>Equipment</dt><dd>Provided by GKC — mats, pads &amp; demonstration gear</dd></div>
+      <div class="row"><dt>Audio-Visual</dt><dd>Projector / speakers if available (not mandatory)</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- 10 · PROGRAMME FLOW -->
+<section class="sec alt" id="flow">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">How The Day Runs</span>
+      <h2 class="center">Programme Flow</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-item reveal"><span class="f-dot">1</span><p class="f-phase">≈ 10 min</p><h3>Welcome &amp; Opening Brief</h3><p>Introduction of the team, purpose of the seminar and ground rules.</p></div>
+      <div class="flow-item reveal" style="--d:.05s"><span class="f-dot">2</span><p class="f-phase">≈ 15 min</p><h3>Awareness Talk</h3><p>Situational awareness, boundaries and everyday risk awareness.</p></div>
+      <div class="flow-item reveal" style="--d:.1s"><span class="f-dot">3</span><p class="f-phase">≈ 15 min</p><h3>Live Demonstration</h3><p>Instructors demonstrate awareness in action, de-escalation and protective responses.</p></div>
+      <div class="flow-item reveal" style="--d:.15s"><span class="f-dot">4</span><p class="f-phase">≈ 20 min</p><h3>Guided Practice</h3><p>Safe, controlled exercises adapted to each age group.</p></div>
+      <div class="flow-item reveal" style="--d:.2s"><span class="f-dot">5</span><p class="f-phase">≈ 10 min</p><h3>Scenario Discussions</h3><p>Age-appropriate situations exploring decisions and responses.</p></div>
+      <div class="flow-item reveal" style="--d:.25s"><span class="f-dot">6</span><p class="f-phase">≈ 10 min</p><h3>Q&amp;A &amp; Reflection</h3><p>Open floor for questions and real-life concerns.</p></div>
+      <div class="flow-item reveal" style="--d:.3s"><span class="f-dot">7</span><p class="f-phase">≈ 5 min</p><h3>Closing &amp; Safety Pledge</h3><p>Key takeaways and a shared personal-safety pledge.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 · INVESTMENT -->
+<section class="sec" id="investment" data-spy>
+  <div class="container">
+    <div class="invest-card reveal">
+      <div class="belt"></div>
+      <h3 style="margin-top:6px">Proposed Investment</h3>
+      <p class="fee-val">To Be Agreed</p>
+      <span class="fee-tag">Per-student &amp; per-session pricing available on request</span>
+      <hr class="invest-div">
+      <h3>What The Investment Covers</h3>
+      <div class="includes">
+        <div><svg class="ic"><use href="#ic-check"/></svg>Certified instructors &amp; assistants</div>
+        <div><svg class="ic"><use href="#ic-check"/></svg>All training equipment &amp; mats</div>
+        <div><svg class="ic"><use href="#ic-check"/></svg>Age-grouped session materials</div>
+        <div><svg class="ic"><use href="#ic-check"/></svg>Demonstration team</div>
+        <div><svg class="ic"><use href="#ic-check"/></svg>Take-home safety guide (digital)</div>
+        <div><svg class="ic"><use href="#ic-check"/></svg>Planning meeting with management</div>
+        <div><svg class="ic"><use href="#ic-check"/></svg>Post-event feedback report</div>
+        <div><svg class="ic"><use href="#ic-check"/></svg>Certificate of participation</div>
+      </div>
+      <p class="invest-foot">A detailed quotation is provided after the planning meeting, based on group sizes and the final session structure.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 12 · NEXT STEPS -->
+<section class="sec alt" id="steps">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Next Steps</span>
+      <h2>Bringing The Seminar To Glisten</h2>
+    </div>
+    <div class="steps slider">
+      <div class="step reveal"><b>01</b><h3>Review</h3><p>Review this proposal with school leadership.</p></div>
+      <div class="step reveal" style="--d:.07s"><b>02</b><h3>Plan</h3><p>Schedule a short planning meeting with the GKC team.</p></div>
+      <div class="step reveal" style="--d:.14s"><b>03</b><h3>Confirm</h3><p>Agree the date, groups and session structure.</p></div>
+      <div class="step reveal" style="--d:.21s"><b>04</b><h3>Deliver</h3><p>We deliver the seminar — and a follow-up report.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 13 · ABOUT -->
+<section class="sec" id="about">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">About Glisten Karate Club</span>
+      <h2>Discipline. Respect. Readiness.</h2>
+    </div>
+    <p class="body reveal" style="max-width:70ch">Glisten Karate Club is the school's karate programme, delivering structured training across primary and secondary sessions. Beyond technique, the club emphasises character: focus, respect, self-control and care for others. Its instructors are supported by recognised martial-art affiliations, and the club regularly adapts its teaching for schools, families and community groups.</p>
+    <div class="about-chips reveal">
+      <span>Karate</span><span>Self-Defence</span><span>Personal Safety</span><span>Fitness</span><span>Character Development</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- 14 · CLOSING -->
+<section class="closing" id="contact">
+  <span class="kanji-bg" aria-hidden="true">押忍</span>
+  <div class="container">
+    <span class="eyebrow light reveal">Let's Work Together</span>
+    <h2 class="closing-title reveal">Ready to bring <span class="accent">safer choices</span> to your school.</h2>
+    <div class="closing-copy reveal">
+      <p>We would be honoured to deliver this seminar for the Glisten community and to support the school's commitment to raising aware, confident and responsible young people.</p>
+    </div>
+    <div class="contact-card reveal" style="--d:.1s">
+      <h3>Proposal Contact</h3>
+      <div class="contact-people">
+        <p><b>Sensei Isaac</b> — General Lead, Glisten Karate Club</p>
+        <p><b>Sensei Raphael</b> — Programmes &amp; Sessions</p>
+      </div>
+      <div class="contact-rows">
+        <!-- REPLACE: real phone / email / site -->
+        <span><svg class="ic"><use href="#ic-phone"/></svg><b>+234 800 000 0000</b></span>
+        <span><svg class="ic"><use href="#ic-mail"/></svg><b>info@glistenkarateclub.com</b></span>
+        <span><svg class="ic"><use href="#ic-pin"/></svg><b>Jahi, Abuja FCT</b></span>
+      </div>
+      <button class="btn btn-red js-export"><svg class="ic"><use href="#ic-download"/></svg>Export Proposal as PDF</button>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer class="footer">
+  <div class="belt"></div>
+  <div class="container footer-in">
+    <div>
+      <div class="f-brand">
+        <img src="/assests/logo/gkc.png" width="40" alt="">
+        <div><strong>GLISTEN KARATE CLUB</strong><span>School Self-Defence &amp; Personal Safety Programmes</span></div>
+      </div>
+      <div class="f-affs" aria-label="Affiliations">
+        <img src="/assests/logo/ttosr.png" alt="TTOSR">
+        <img src="/assests/logo/bma.png"  alt="Bushido Martial Art Academy">
+        <img src="/assests/logo/fctkc.png"  alt="FCT Karate Association">
+        <img src="/assests/logo/nka.png"  alt="Nigerian Karate Association">
+        <img src="/assests/logo/kfn.png"  alt="Karate Federation of Nigeria">
+      </div>
+    </div>
+    <div class="f-right">
+      <p class="f-meta">Prepared for <b>Glisten International Academy</b>, Jahi, Abuja FCT</p>
+      <p class="f-meta">Ref <b>GKC/GIA-SDS/2026/001</b> · Version <b>1.0 — September 2026</b></p>
+      <p class="f-hint">Tip: press Ctrl / Cmd + P, or any “Export PDF” button, to save this proposal as a PDF.</p>
+    </div>
+  </div>
+</footer>
+
+</div><!-- /landing -->
+
+<button class="btn btn-red float-export js-export"><svg class="ic"><use href="#ic-download"/></svg>Export PDF</button>
+
+<div class="print-overlay" id="printOverlay">
+  <div class="po-card">
+    <div class="spinner"></div>
+    <h3>Preparing your PDF…</h3>
+    <p>The print dialog will open — choose “Save as PDF” as the destination.</p>
+  </div>
+</div>
+
+<!-- ================================================================
+     PRINTABLE DOCUMENT
+================================================================ -->
+<div id="pdf-doc">
+
+  <div class="pdf-watermark" aria-hidden="true"><svg viewBox="0 0 210 297"><use href="#wm-petals"/></svg></div>
+  <div class="pdf-footer"><span>Ref: GKC/GIA-SDS/2026/001</span><span>School Self-Defence &amp; Personal Safety Seminar — Proposal</span><span>Version 1.0 · September 2026</span></div>
+
+  <!-- PAGE 1 · COVER (matches the sample title page layout) -->
+  <section class="pdf-page">
+    <div class="pdf-cover">
+      <div class="pdf-top-logos">
+        <img src="/assests/logo/rlma.png" alt="Royal Legendary Martial Art">
+        <img class="tl-gkc" src="/assests/logo/gkc.png" alt="Glisten Karate Club">
+      </div>
+      <div class="pdf-cover-mid">
+        <h1>PROPOSAL</h1>
+        <p class="pdf-cover-club">GLISTEN KARATE CLUB</p>
+        <p class="pdf-cover-seminar">School Self-Defence &amp; Personal Safety Seminar</p>
+        <div class="pdf-datebox">September 2026</div>
+        <p class="pdf-cover-venue">Glisten International Academy,<br>Jahi, Abuja FCT</p>
+      </div>
+      <div class="pdf-cover-affs">
+        <img class="af-tt" src="/assests/logo/ttosr.png" alt="TTOSR">
+        <img src="/assests/logo/bma.png" alt="BMA">
+        <img src="/assests/logo/fctkc.png" alt="FCTKA">
+        <img src="/assests/logo/nka.png" alt="NKA">
+        <img src="/assests/logo/kfn.png" alt="KFN">
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 2 -->
+  <section class="pdf-page">
+    <h2 class="pdf-h">1. Proposal Overview</h2>
+    <p class="pdf-aim">Self-defence extends beyond physical techniques. Glisten Karate Club proposes a school-wide <b>Self-Defence &amp; Personal Safety Seminar</b> for the Glisten International Academy community — an interactive learning experience bringing together students, teachers, staff, parents and guardians to develop a shared understanding of personal safety.</p>
+    <p>A meaningful personal-safety programme helps people recognise situations, make safer decisions, communicate effectively, manage pressure and respond appropriately when confronted with a potential threat. This seminar brings those principles into an accessible, practical setting.</p>
+
+    <h2 class="pdf-h">2. Why This Seminar</h2>
+    <p>Many situations can be managed — or avoided entirely — before they become physical confrontations. The seminar therefore equips participants to:</p>
+    <ul class="pdf-ul">
+      <li>Pay attention to their surroundings;</li>
+      <li>Recognise potentially unsafe situations and identify warning signs;</li>
+      <li>Establish and communicate personal boundaries;</li>
+      <li>Make safer decisions under pressure;</li>
+      <li>Use verbal communication to de-escalate situations;</li>
+      <li>Seek appropriate assistance; and</li>
+      <li>Respond appropriately when physical intervention becomes unavoidable.</li>
+    </ul>
+    <p class="pdf-note">The emphasis is on awareness, prevention, responsible response and personal confidence — rather than encouraging confrontation.</p>
+  </section>
+
+  <!-- PAGE 3 -->
+  <section class="pdf-page">
+    <h2 class="pdf-h">3. Key Learning Areas</h2>
+    <ol class="pdf-ol">
+      <li><b>Situational Awareness</b> — understanding the environment, identifying unusual behaviour and recognising potential warning signs.</li>
+      <li><b>Prevention &amp; Risk Awareness</b> — how everyday choices, positioning and awareness reduce exposure to unnecessary risk.</li>
+      <li><b>Boundaries &amp; Assertive Communication</b> — personal boundaries, and appropriate ways to communicate clearly and confidently.</li>
+      <li><b>Verbal De-escalation</b> — how communication, composure and decision-making can prevent situations from escalating.</li>
+      <li><b>Protective Responses</b> — simple, practical principles for protecting oneself and creating an opportunity to move away from danger.</li>
+      <li><b>Getting Help</b> — when and how to seek assistance from trusted adults, authorities, security personnel or emergency services.</li>
+      <li><b>Post-Incident Awareness</b> — what to do after an incident, including reporting, seeking assistance and preserving personal safety.</li>
+    </ol>
+
+    <h2 class="pdf-h">4. The Seminar Experience</h2>
+    <p>Rather than being a lecture alone, the seminar combines several learning methods:</p>
+    <ul class="pdf-ul">
+      <li><b>Presentation</b> — clear explanations of personal-safety principles;</li>
+      <li><b>Demonstration</b> — instructors demonstrate practical concepts in an easy-to-understand format;</li>
+      <li><b>Guided Participation</b> — safe, controlled exercises where appropriate;</li>
+      <li><b>Scenario-Based Learning</b> — age-appropriate situations used to explore decision-making and responses;</li>
+      <li><b>Discussion &amp; Q&amp;A</b> — participants ask questions and discuss real-life concerns.</li>
+    </ul>
+    <p class="pdf-note">This makes the programme suitable for a school-wide audience, while allowing activities to be adapted to the age and needs of each group.</p>
+  </section>
+
+  <!-- PAGE 4 -->
+  <section class="pdf-page">
+    <h2 class="pdf-h">5. Target Audience</h2>
+    <ul class="pdf-ul">
+      <li><b>Students</b> — age-appropriate personal safety awareness, confidence, boundaries and practical responses.</li>
+      <li><b>Teachers &amp; Staff</b> — practical awareness and response principles applicable within and outside the school environment.</li>
+      <li><b>Parents &amp; Guardians</b> — understanding how to reinforce personal-safety awareness and responsible behaviour at home.</li>
+      <li><b>The School Community</b> — creating a shared culture of awareness, responsibility and preparedness.</li>
+    </ul>
+
+    <h2 class="pdf-h">6. School Community Benefits</h2>
+    <ul class="pdf-ul">
+      <li><b>Awareness</b> — more observant, safety-conscious members of the school community;</li>
+      <li><b>Confidence</b> — calmness and confidence without promoting unnecessary confrontation;</li>
+      <li><b>Responsibility</b> — understanding the consequences of decisions and actions;</li>
+      <li><b>Communication</b> — communicating boundaries and seeking help appropriately;</li>
+      <li><b>Community</b> — a shared understanding of personal safety across students, staff and families.</li>
+    </ul>
+  </section>
+
+  <!-- PAGE 5 -->
+  <section class="pdf-page">
+    <h2 class="pdf-h">7. Instruction Team</h2>
+    <ul class="pdf-ul pdf-team">
+      <li><b>Sensei Isaac</b> — General Lead · Primary Session Instructor. Leads the Glisten Karate Club's primary-session instruction and oversees the school's broader karate programme. <i>(Royal Legendary Martial Art)</i></li>
+      <li><b>Sensei Raphael</b> — Secondary Session Instructor. Leads secondary-session delivery, specialising in scenario-based learning and protective responses for older students. <i>(TTOSR)</i></li>
+      <li><b>Sempai David</b> — Assistant Instructor · Demonstration Lead. Supports guided practice across groups and leads the demonstration segments. <i>(Bushido Martial Art Academy)</i></li>
+    </ul>
+    <p class="pdf-note">Sessions are supported by the club's instructional affiliations: TTOSR, Bushido Martial Art Academy, FCT Karate Association, Nigerian Karate Association and the Karate Federation of Nigeria.</p>
+
+    <h2 class="pdf-h">8. Logistics &amp; Requirements</h2>
+    <table class="pdf-spec">
+      <tr><td>Venue</td><td>School hall / covered gym area (to be confirmed)</td></tr>
+      <tr><td>Date &amp; Time</td><td>To be agreed — a school day or Saturday morning slot</td></tr>
+      <tr><td>Duration</td><td>60–90 minutes per group (adjustable)</td></tr>
+      <tr><td>Groups</td><td>Primary · Secondary · Staff · Parents (separate or combined)</td></tr>
+      <tr><td>Equipment</td><td>Provided by GKC — mats, pads and demonstration gear</td></tr>
+      <tr><td>Audio-Visual</td><td>Projector / speakers if available (not mandatory)</td></tr>
+    </table>
+    <p class="pdf-note">All practical activities are age-appropriate, non-competitive and conducted on controlled surfaces. Participation in physical segments is optional and supervised at all times.</p>
+  </section>
+
+  <!-- PAGE 6 -->
+  <section class="pdf-page">
+    <h2 class="pdf-h">9. Proposed Programme Flow</h2>
+    <ol class="pdf-ol">
+      <li><b>Welcome &amp; Opening Brief</b> (≈10 min) — team introductions, purpose and ground rules.</li>
+      <li><b>Awareness Talk</b> (≈15 min) — situational awareness, boundaries and everyday risk awareness.</li>
+      <li><b>Live Demonstration</b> (≈15 min) — awareness in action, de-escalation and protective responses.</li>
+      <li><b>Guided Practice</b> (≈20 min) — safe, controlled exercises adapted to each age group.</li>
+      <li><b>Scenario Discussions</b> (≈10 min) — age-appropriate situations exploring decisions and responses.</li>
+      <li><b>Q&amp;A &amp; Reflection</b> (≈10 min) — open floor for questions and real-life concerns.</li>
+      <li><b>Closing &amp; Safety Pledge</b> (≈5 min) — key takeaways and a shared personal-safety pledge.</li>
+    </ol>
+    <p class="pdf-note">Timings are indicative and will be adjusted to the final group structure agreed with Management.</p>
+
+    <h2 class="pdf-h">10. Proposed Investment</h2>
+    <p class="pdf-fee">TO BE AGREED</p>
+    <p style="text-align:center">Per-student and per-session pricing available on request. The investment covers:</p>
+    <ul class="pdf-ul">
+      <li>Certified instructors and assistants; all training equipment and mats;</li>
+      <li>Age-grouped session materials and demonstration team;</li>
+      <li>Take-home safety guide (digital) and certificates of participation;</li>
+      <li>Planning meeting with Management and a post-event feedback report.</li>
+    </ul>
+    <p class="pdf-note">A detailed quotation is provided after the planning meeting, based on group sizes and the final session structure.</p>
+  </section>
+
+  <!-- PAGE 7 -->
+  <section class="pdf-page">
+    <h2 class="pdf-h">11. Next Steps</h2>
+    <ol class="pdf-ol">
+      <li>Review this proposal with school leadership.</li>
+      <li>Schedule a short planning meeting with the GKC team.</li>
+      <li>Confirm the date, group structure and session format.</li>
+      <li>GKC delivers the seminar and provides a follow-up feedback report.</li>
+    </ol>
+
+    <h2 class="pdf-h">12. Acceptance &amp; Contact</h2>
+    <p>We remain available to discuss any aspect of this proposal and to tailor the programme to the school's calendar and priorities. To proceed, or to arrange the planning meeting, please contact:</p>
+    <p class="pdf-contact">
+      <b>Sensei Isaac</b> — General Lead, Glisten Karate Club<br>
+      <!-- REPLACE: real phone / email -->
+      Phone: +234 800 000 0000 &nbsp;·&nbsp; Email: info@glistenkarateclub.com<br>
+      Jahi, Abuja FCT
+    </p>
+    <div class="pdf-sign">
+      <div>Signed — School Management<br>Date: ______________________</div>
+      <div>Signed — Glisten Karate Club<br>Date: ______________________</div>
+    </div>
+  </section>
+
+</div><!-- /pdf-doc -->
+
+<script>
+(function(){
+  /* nav */
+  var nav=document.getElementById('nav');
+  var onScroll=function(){nav.classList.toggle('scrolled',window.scrollY>12)};
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  /* mobile sidebar toggle */
+  var sidebar=document.getElementById('mobileSidebar');
+  var toggle=document.getElementById('navToggle');
+  var closeBtn=document.getElementById('msClose');
+  var openSidebar=function(){
+    sidebar.classList.add('open');
+    sidebar.setAttribute('aria-hidden','false');
+    toggle.setAttribute('aria-expanded','true');
+    document.body.style.overflow='hidden';
+  };
+  var closeSidebar=function(){
+    sidebar.classList.remove('open');
+    sidebar.setAttribute('aria-hidden','true');
+    toggle.setAttribute('aria-expanded','false');
+    document.body.style.overflow='';
+  };
+  if(toggle&&sidebar){
+    toggle.addEventListener('click',openSidebar);
+    if(closeBtn) closeBtn.addEventListener('click',closeSidebar);
+    sidebar.querySelectorAll('[data-close-sidebar], .ms-links a, .ms-cta a').forEach(function(el){
+      el.addEventListener('click',closeSidebar);
+    });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&sidebar.classList.contains('open')) closeSidebar(); });
+  }
+
+  /* reveal */
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+
+  /* scrollspy */
+  var links=[].slice.call(document.querySelectorAll('[data-spylink]'));
+  var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('active',a.dataset.spylink===e.target.id)})}})},{rootMargin:'-40% 0px -55% 0px'});
+  document.querySelectorAll('[data-spy]').forEach(function(s){spy.observe(s)});
+
+  /* mobile sliders + dot indicators + AUTO PLAY */
+  var AUTO_MS = 3500;
+  document.querySelectorAll('.slider').forEach(function(wrap){
+    var slides=[].slice.call(wrap.children);if(!slides.length)return;
+    var dots=document.createElement('div');dots.className='slider-nav';dots.setAttribute('aria-hidden','true');
+    var btns=slides.map(function(s,i){
+      var b=document.createElement('button');
+      b.setAttribute('aria-label','Go to item '+(i+1));
+      b.addEventListener('click',function(){
+        goTo(i);
+        resetAuto();
+      });
+      dots.appendChild(b);return b;
+    });
+    wrap.after(dots);
+    var raf=null;
+    var current=0;
+    var timer=null;
+    var isHover=false;
+    var isUserScrolling=false;
+    var userScrollTimer=null;
+
+    var goTo=function(idx){
+      current = (idx+slides.length)%slides.length;
+      var s=slides[current];
+      wrap.scrollTo({left:s.offsetLeft-(wrap.clientWidth-s.offsetWidth)/2,behavior:'smooth'});
+    };
+
+    var update=function(){raf=null;var c=wrap.scrollLeft+wrap.clientWidth/2,bi=0,bd=Infinity;
+      slides.forEach(function(s,i){var d=Math.abs(s.offsetLeft+s.offsetWidth/2-c);if(d<bd){bd=d;bi=i}});
+      current=bi;
+      btns.forEach(function(b,i){b.classList.toggle('on',i===bi)});};
+
+    wrap.addEventListener('scroll',function(){
+      if(!raf)raf=requestAnimationFrame(update);
+      if(!isUserScrolling){
+        isUserScrolling=true;
+        clearTimeout(userScrollTimer);
+        stopAuto();
+      }
+      clearTimeout(userScrollTimer);
+      userScrollTimer=setTimeout(function(){ isUserScrolling=false; startAuto(); }, 1800);
+    },{passive:true});
+
+    var startAuto=function(){
+      stopAuto();
+      if(matchMedia('(max-width:860px)').matches && !isHover && slides.length>1){
+        timer=setInterval(function(){
+          if(document.hidden || isHover || isUserScrolling) return;
+          goTo(current+1);
+        }, AUTO_MS);
+      }
+    };
+    var stopAuto=function(){ if(timer){clearInterval(timer);timer=null;} };
+    var resetAuto=function(){ stopAuto(); setTimeout(startAuto, 800); };
+
+    wrap.addEventListener('mouseenter',function(){isHover=true;stopAuto();});
+    wrap.addEventListener('mouseleave',function(){isHover=false;startAuto();});
+    wrap.addEventListener('touchstart',function(){isHover=true;stopAuto();},{passive:true});
+    wrap.addEventListener('touchend',function(){isHover=false;resetAuto();},{passive:true});
+
+    // pause when not in viewport
+    var visObs=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting) startAuto(); else stopAuto();
+      });
+    },{threshold:0.25});
+    visObs.observe(wrap);
+
+    matchMedia('(max-width:860px)').addEventListener('change',function(){ if(matchMedia('(max-width:860px)').matches) startAuto(); else stopAuto(); });
+
+    update();
+    startAuto();
+  });
+
+  /* export */
+  var overlay=document.getElementById('printOverlay');
+  document.querySelectorAll('.js-export').forEach(function(b){
+    b.addEventListener('click',function(){
+      if(sidebar&&sidebar.classList.contains('open')){ /* close sidebar first */ sidebar.classList.remove('open'); document.body.style.overflow=''; }
+      overlay.classList.add('show');
+      setTimeout(function(){window.print();overlay.classList.remove('show')},420);
+    });
+  });
+  addEventListener('afterprint',function(){overlay.classList.remove('show')});
+})();
+</script>
+
+</body>
+</html>
